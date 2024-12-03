@@ -170,6 +170,7 @@ section {
   ul {
     justify-content: space-evenly;
     margin-top: 35px;
+
   }
 
   li {
@@ -304,7 +305,7 @@ section {
   .pop_container {
     border-radius: 10px;
     width: 449px;
-    height: 92%;
+    height: 90%;
     background-color: #ebdc6d;
     display: flex;
     flex-direction: column;
@@ -356,6 +357,7 @@ section {
       border: none;
       border-radius: 5px;
       font-weight: bold;
+      margin-bottom: 4px;
 
       &:hover {
         cursor: pointer;
@@ -371,7 +373,6 @@ section {
   top: 2%;
   right: 8px;
   text-align: center;
-  display: none;
 
   h3 {
     text-shadow: 1px 1px 1px rgba(52, 2, 2, 0.8);
@@ -457,9 +458,143 @@ section {
   text-align: center; // align center
 }
 
-// Show the cart only in laptop mode
-@media (min-width: 1024px) {
+
+
+/* General styles for large screens (default) */
+
+/* For tablets (width <= 768px) */
+@media (max-width: 768px) {
+  .Hero-container {
+    height: 50vh;
+
+    .Hero-text {
+      max-width: 500px;
+      left: 5%;
+    }
+  }
+
+  .header {
+    .logo {
+      margin-left: 16px;
+    }
+
+    .nav {
+      margin-right: -9px;
+    }
+  }
+
+  .special-container .content,
+  .special-container .menu-list,
+  .btnText {
+    max-width: 90%;
+  }
+
+  .checkout {
+    min-height: 23vh;
+  }
+
+  .special-container li,
+  .filterList li,
+  .checkout li {
+    width: 45%;
+    /* Make items two per row */
+  }
+
   .cart {
-    display: block; // Show the cart in laptop mode
+    display: none;
+  }
+
+  .buttons button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* For mobile devices (width <= 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  p,
+  ul {
+    font-size: 10px;
+  }
+
+  .header .nav li {
+    padding: 4px 4px;
+    margin-right: 16px;
+  }
+
+  .Hero-container {
+    height: 31vh;
+
+    img {
+      transform: translateY(0);
+    }
+
+    .Hero-text {
+      max-width: 90%;
+      left: 8%;
+      top: 50%;
+    }
+  }
+
+  .filterList ul {
+    margin: 35px 36px 0px 36px;
+  }
+
+  .special-container li,
+  .filterList li {
+    width: 100%;
+    /* Single column */
+  }
+
+  .checkout {
+    min-height: 42vh;
+    li {
+      width: 67%;
+    }
+  }
+
+  .cart {
+    display: none;
+  }
+
+  .buttons button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .popup {
+    #close-button {
+      top: 7px;
+    }
+
+    .pop_container {
+      width: 90%;
+      height: auto;
+
+      img {
+        height: 50%;
+        width: 100%;
+        margin-top: 0;
+      }
+
+      p {
+        max-height: 150px;
+        font-size: 10px;
+        max-width: 90%;
+      }
+
+      #dishcategory {
+        top: 2%;
+        left: 6%;
+      }
+    }
   }
 }
